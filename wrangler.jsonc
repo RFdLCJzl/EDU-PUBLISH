@@ -1,13 +1,15 @@
 // Cloudflare Workers 静态站点部署配置（Git 直连构建使用）
-// 仓库原本面向 Cloudflare Pages（public/_redirects + functions/），
-// 若后续回到经典 Pages 流程，此文件可保留不影响。
+//
+// 路由说明：本仓库为单页应用（根 index.tsx 使用 BrowserRouter），
+// SPA 回退由下方 assets.not_found_handling 承担，等效于原 Pages 的
+// `/*  /index.html  200` 规则（public/_redirects 已因此停用）。
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "edu-publish",
   "compatibility_date": "2026-09-01",
   "assets": {
     "directory": "./dist",
-    // 等价于 public/_redirects 中的 "/*  /index.html  200"（SPA 回退）
+    // 未匹配到静态文件时返回 index.html（200），供前端路由接管
     "not_found_handling": "single-page-application"
   }
 }
