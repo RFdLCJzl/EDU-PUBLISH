@@ -1,0 +1,13 @@
+// Cloudflare Workers 静态站点部署配置（Git 直连构建使用）
+// 仓库原本面向 Cloudflare Pages（public/_redirects + functions/），
+// 若后续回到经典 Pages 流程，此文件可保留不影响。
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "edu-publish",
+  "compatibility_date": "2026-09-01",
+  "assets": {
+    "directory": "./dist",
+    // 等价于 public/_redirects 中的 "/*  /index.html  200"（SPA 回退）
+    "not_found_handling": "single-page-application"
+  }
+}
