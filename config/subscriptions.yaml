@@ -1,45 +1,51 @@
-# ─── EDU-PUBLISH Demo Subscriptions ───
-# Replace these with your university's actual departments/schools.
+# ─── EDU-PUBLISH 订阅源配置 ───
+# 修改本文件后需重新执行 pnpm run compile:config（或重跑 pnpm run dev）才会生效。
 
 # 通知分类枚举（Bot 生成 category 字段时必须从此列表选取，末尾项为兜底值）
+# 约定：教学教务类通知归入「通知公告」；讲座活动类通知归入「二课活动」。
 categories:
   - 通知公告
   - 竞赛相关
   - 志愿实习
   - 二课活动
   - 问卷填表
+  - 考试安排
   - 其它分类
 
 schools:
-  - slug: info-engineering
-    name: 信息工程学院
-    short_name: 信工
-    order: 1
-    icon: /img/unit-icon-info-engineering.svg
-    subscriptions:
-      - title: 学院通知
-        enabled: true
-        order: 1
-        icon: /img/unit-icon-info-engineering.svg
-
   - slug: literature
     name: 文学院
     short_name: 文学
-    order: 2
+    order: 1
     icon: /img/unit-icon-literature.svg
     subscriptions:
-      - title: 学院通知
+      - title: 2026级新生交流
         enabled: true
         order: 1
         icon: /img/unit-icon-literature.svg
+      - title: 本科通知
+        enabled: true
+        order: 2
+        icon: /img/unit-icon-literature.svg
 
-  - slug: student-affairs
-    name: 学生事务中心
-    short_name: 学工
-    order: 3
-    icon: /img/unit-icon-student-affairs.svg
+  - slug: college-english
+    name: 大英课
+    short_name: 大英
+    order: 2
+    icon: /img/default-unit-icon.svg
     subscriptions:
-      - title: 中心公告
+      - title: 进阶英语
         enabled: true
         order: 1
-        icon: /img/unit-icon-student-affairs.svg
+        icon: /img/default-unit-icon.svg
+
+  - slug: ideological-course
+    name: 思政课
+    short_name: 思政
+    order: 3
+    icon: /img/default-unit-icon.svg
+    subscriptions:
+      - title: 习思想2班
+        enabled: true
+        order: 1
+        icon: /img/default-unit-icon.svg

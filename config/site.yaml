@@ -3,14 +3,14 @@
 # Change these values to customize the site for your university.
 
 # === Basic Info ===
-site_name: "EDU Publish"
-site_short_name: "EDU Publish"
-site_description: "高校通知聚合站"
+site_name: "湖南大学通知聚合"
+site_short_name: "湖大通知"
+site_description: "湖南大学文学院及公共课通知聚合站"
 site_url: "https://example.edu.cn"
 default_locale: "zh-CN"
 
 # === Organization ===
-organization_name: "示例大学"
+organization_name: "湖南大学文学院"
 organization_type: "university"
 organization_unit_label: "单位"
 
@@ -22,17 +22,19 @@ default_cover: "/img/default-cover.svg"
 
 # === Footer ===
 footer:
-  copyright: "© 2025 示例大学"
+  copyright: "© 2026 湖南大学文学院"
   links:
     - label: "GitHub"
-      url: "https://github.com/your-org/edu-publish"
+      url: "https://github.com/RFdLCJzl/EDU-PUBLISH"
     - label: "反馈"
-      url: "https://github.com/your-org/edu-publish/issues"
+      url: "https://github.com/RFdLCJzl/EDU-PUBLISH/issues"
 
 # === SEO ===
 seo:
   title_template: "{page} - {site_name}"
   default_keywords:
+    - 湖南大学
+    - 文学院
     - 高校通知
     - 校园信息
 
