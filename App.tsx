@@ -288,7 +288,7 @@ const AppShell: React.FC<{
   }
 
   return (
-    <div className="flex h-[100dvh] bg-background font-sans text-foreground overflow-hidden relative">
+    <div className="flex app-viewport bg-background font-sans text-foreground overflow-hidden relative">
       <LeftSidebar
         isSidebarOpen={isSidebarOpen}
         setIsSidebarOpen={setIsSidebarOpen}

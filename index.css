@@ -61,6 +61,35 @@ html.theme-switching *::after {
   }
 }
 
+/* ---------------------------------------------------------------------------
+ * 视口高度（移动端关键）
+ *
+ * 站点是「固定高度外壳 + 内部滚动容器」结构，body 上还有 overflow-hidden，
+ * 因此一旦外壳高度失效（退化成 auto），整页就会彻底滚不动。
+ *
+ * `100dvh` 是较新的单位：部分安卓 App 内置浏览器内核（微信/QQ 等）与旧版
+ * iOS Safari 不支持。所以这里先给 `100vh` 兜底，再让支持 dvh 的浏览器覆盖。
+ * ------------------------------------------------------------------------- */
+.app-viewport {
+  height: 100vh;
+  height: 100dvh;
+}
+
+/* 极端兜底：若浏览器连 dvh 都不支持（高度无法锁定），
+ * 则放开 body/文档自身滚动，保证用户至少能滑动页面。 */
+@supports not (height: 100dvh) {
+  html,
+  body {
+    height: auto !important;
+    min-height: 100%;
+    overflow: auto !important;
+  }
+  .app-viewport {
+    height: auto;
+    min-height: 100vh;
+  }
+}
+
 /* Custom Scrollbar */
 .custom-scrollbar::-webkit-scrollbar {
   width: 6px;
