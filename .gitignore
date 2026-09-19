@@ -24,6 +24,9 @@ napcat/
 ntqq/
 docker-compose.yml
 
+# ─── WorkBuddy 本地会话数据（只是本地记忆/自动化元数据，不该进仓库）───
+.workbuddy/
+
 # ─── Archive: keep directory, ignore runtime contents ───
 archive/*
 !archive/.gitkeep
